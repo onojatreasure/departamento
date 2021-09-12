@@ -1,6 +1,7 @@
 package com.treasureio.plunt.controller;
 
 import com.treasureio.plunt.entity.Department;
+import com.treasureio.plunt.error.DepartmentNotFoundException;
 import com.treasureio.plunt.service.DepartmentService;
 import org.slf4j.*;
 
@@ -36,7 +37,7 @@ public class DepartmentController {
 
     //Get A Dept by ID
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) {
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
