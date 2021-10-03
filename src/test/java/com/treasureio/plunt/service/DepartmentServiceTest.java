@@ -3,6 +3,7 @@ package com.treasureio.plunt.service;
 import com.treasureio.plunt.entity.Department;
 import com.treasureio.plunt.repository.DepartmentRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ class DepartmentServiceTest {
     }
 
     @Test
+    @DisplayName(("Get Data based on valid department name"))
     public void whenvalidDepartmentName_thenDepartmentShouldFound() {
         String departmentName = "IT";
         Department found = departmentService.fetchDepartmentByName(departmentName);
